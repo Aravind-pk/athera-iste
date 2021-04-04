@@ -29,26 +29,33 @@ var isteCheck =(checkbox)=>{
 
 
 var addEvents = (events) =>{
-    var eventHtml ="";
     // console.log(events);
-
-    for(i=0; i<events; i++){
-        
-
-
-        //elements create with ids    event1 ,event2 , event
-        eventHtml += 
-
-        `     <div class="form-group mb-4" > <select id="event${i + 1}" name=\"account\" class=\"form-control border-0 shadow form-control-lg\">` +
-        `     <option> Select event ${i+1}</option>  ` +
-               eventOptions() +
-        "     </select> </div>  " ;
-
+    if( events >3 || events<1 ){
+        document.getElementById("eventSelect").value="3";
+        events = 3;
     }
 
-    // console.log(eventHtml);
-    var elementContainer = document.getElementById("eventContainer");
-    elementContainer.innerHTML= eventHtml;
+        var eventHtml ="";
+        
+    
+        for(i=0; i<events; i++){
+            
+    
+    
+            //elements create with ids    event1 ,event2 , event
+            eventHtml += 
+    
+            `     <div class="form-group mb-4" > <select id="event${i + 1}" name=\"account\" class=\"form-control border-0 shadow form-control-lg\">` +
+            `     <option> Select event ${i+1}</option>  ` +
+                   eventOptions() +
+            "     </select> </div>  " ;
+    
+        }
+    
+        // console.log(eventHtml);
+        var elementContainer = document.getElementById("eventContainer");
+        elementContainer.innerHTML= eventHtml;
+    
 };
 
 
