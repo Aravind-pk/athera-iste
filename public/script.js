@@ -8,6 +8,7 @@ var eventlist =[
     "event 6"
 ];
 
+document.getElementById("isteNo").style.display="none";
 var eventOptions = ()=>{
     evOp =""
     eventlist.forEach(eventName => {
@@ -15,6 +16,17 @@ var eventOptions = ()=>{
     });
     return evOp;
 }
+
+
+var isteCheck =(checkbox)=>{
+    var isteNo = document.getElementById("isteNo");
+    if(checkbox.checked){
+        isteNo.style.display ="block";
+    }else{
+        isteNo.style.display = "none";
+    }
+}
+
 
 var addEvents = (events) =>{
     var eventHtml ="";
@@ -38,4 +50,5 @@ var addEvents = (events) =>{
     var elementContainer = document.getElementById("eventContainer");
     elementContainer.innerHTML= eventHtml;
 };
+
 
